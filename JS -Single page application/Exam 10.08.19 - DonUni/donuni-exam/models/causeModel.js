@@ -28,9 +28,7 @@ const causeModel = function () {
     console.log(params);
     params.collectedFunds = updatedCollectedFunds;
     console.log(params.donors);
-    let donor = params.donors.filter((name) => {
-      name === sessionStorage.getItem('username')
-    })[0];
+    let donor = params.donors.filter((name) => name === sessionStorage.getItem('username'))[0];
 
     console.log(donor);
     if (!donor) {

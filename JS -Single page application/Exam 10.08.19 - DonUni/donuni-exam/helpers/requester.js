@@ -1,8 +1,8 @@
 const requester = function () {
     const baseUrl = "https://baas.kinvey.com/";
 
-    const appKey = "Add yours keys for Kinvey database";
-    const appSecret = "Add yours password for Kinvey database";
+    const appKey = "Enter your Kivey appKEY";
+    const appSecret = "Enter your Kivey appSecret";
 
     const get = function (endpoint, module, type) {
         const headers = makeHeaders(type, 'GET');

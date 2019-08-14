@@ -22,7 +22,6 @@ const causeController = function () {
     //  causeModel.getMyCauses(sessionStorage.getItem('userId'))
       .then(helper.handler)
       .then((data) => {
-        console.log(data);
         context.causes = data;
         helper.loadPartials(context, {'cause-view': './views/cause/cause-view.hbs'})
           .then(function () {
@@ -36,7 +35,6 @@ const causeController = function () {
     causeModel.getCauseById(context.params.id)
       .then(helper.handler)
       .then((data) => {
-        console.log(data);
         Object.keys(data).forEach(key => {
           if (key === 'donors') {
             data[key] = data[key].join(' ');
@@ -60,13 +58,8 @@ const causeController = function () {
     causeModel.getCauseById(causeId)
       .then(helper.handler)
       .then((data) => {
-        console.log(data);
-        // let currentCollectedFunds = Number(data.collectedFunds);
-        // let updatedCollectedFunds = currentCollectedFunds + causeDonation;
-        // data.collectedFunds = updatedCollectedFunds;
-        // data.donors.push(sessionStorage.getItem('username'));
-
-        causeModel.editCause(data,causeDonation)
+        console.log("Post Edit - " + data);
+        causeModel.editCause(data, causeDonation)
           .then(helper.handler)
           .then((data) => {
             console.log(data);
@@ -88,7 +81,7 @@ const causeController = function () {
         });
         helper.loadPartials(context)
           .then(function () {
-            this.partial('./views/cause/cause-delete.hbs')
+            this.partial('./views/cause/cause-close.hbs')
           })
       })
   };

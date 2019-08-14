@@ -30,7 +30,9 @@
         </center>
       </div>
       <div class="modal-footer">
-        <a href="#/cause/delete/{{_id}}" class="btn btn-danger">Close the cause</a>
+        <form method="POST" action="#/cause/delete/{{_id}}">
+          <button style="width: 100%;" class="btn btn-danger" type="submit">Close the cause</button>
+        </form>
       </div>
     </div>
   </div>
